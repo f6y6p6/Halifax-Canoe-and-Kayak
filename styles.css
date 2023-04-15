@@ -1,0 +1,357 @@
+html {
+  width: 100%;
+}
+
+/* declared some variables to use for color */
+
+:root {
+  --bg-color: rgb(20, 20, 20);
+  --card-color: rgb(23, 23, 23);
+}
+
+/* reseting spaces inside and out to start with */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  background-color: rgb(20, 20, 20);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*header styles section */
+
+header {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 0 0 20px 20px;
+  box-shadow: -5px 5px 10px 4px rgba(0,0,0,0.7);
+  position: fixed;
+  z-index: 99;
+}
+
+header a:visited,
+header a:link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+  list-style: none;
+}
+
+
+.menu {
+  display: none;
+}
+
+.assets {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+#menu-btn {
+  width: 2rem;
+  cursor: pointer;
+}
+
+#paddle-logo {
+  width: 3rem;
+  height: 2.3rem;
+}
+
+/* main content style section */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  align-items: center;
+  justify-content: center;
+  max-width: 1120px;
+  margin: auto;
+  padding: 5rem 2rem 2rem 2rem;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+#main-image {
+  display: block;
+  margin: auto;
+  width: 100%;
+  border-radius: 2%;
+}
+
+.over-text {
+  font-size: 4rem;
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-over {
+  font-weight: 500;
+}
+
+h1 {
+  color: #fff;
+  background-color: transparent;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  margin: 2rem auto;
+}
+
+.form-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+}
+
+.form-wrap>div>a {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+#problem {
+  margin: 2rem;
+}
+
+#logout-button {
+  height: 2rem;
+  width: 5rem;
+}
+
+.select-button {
+  height: 2rem;
+  width: 10rem;
+  margin: 0.5rem;
+}
+
+/* styles for cards with glowing effect */
+/* ↓ ↓ ↓NOT fully mine own work, just wanted to try and implement it to the project ↓ ↓ ↓*/
+
+#cards {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+#cards:hover > .card::after {
+opacity: 1;
+}
+
+.card {
+background-color: rgba(255, 255, 255, 0.1);
+border-radius: 10px;
+cursor: pointer;
+display: flex;
+height: 12rem;
+flex-direction: column;
+position: relative;
+width: 30vw;  
+box-shadow: -5px 5px 10px 4px rgba(0,0,0,0.7);
+}
+
+.card:hover::before {
+opacity: 1;
+}
+
+.card::before,
+.card::after {
+border-radius: inherit;
+content: "";
+height: 100%;
+left: 0px;
+opacity: 0;
+position: absolute;
+top: 0px;
+transition: opacity 500ms;
+width: 100%;
+}
+
+.card::before {
+background: radial-gradient(
+  800px circle at var(--mouse-x) var(--mouse-y), 
+  rgba(255, 255, 255, 0.06),
+  transparent 40%
+);
+z-index: 3;
+}
+
+.card::after {  
+background: radial-gradient(
+  600px circle at var(--mouse-x) var(--mouse-y), 
+  rgba(255, 255, 255, 0.4),
+  transparent 40%
+);
+z-index: 1;
+}
+
+.card > .card-content {
+background-color: var(--card-color);
+border-radius: inherit;
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+inset: 1px;
+padding: 10px;
+position: absolute;
+z-index: 2;
+}
+
+h2, h3, h4, span {
+  color: rgb(240, 240, 240);
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  margin: 5px;
+}
+
+.card-content > h3 {
+  font-size: 1.1em;
+  line-height: 20px;
+}
+
+.card-content > h4 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85em;
+  margin-top: 8px;
+}
+
+footer {
+  margin-top : auto;
+  align-items: center;
+  width: 100%;background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px 20px 0 0;
+}
+
+footer ul {
+  padding: 0.5rem;
+}
+
+footer a:visited,
+footer a:link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* media queries for responsiveness */
+
+@media(max-width: 1208px) {
+  .card {
+    height: 12.5rem;
+  }
+}
+
+@media(max-width: 1000px) {
+  body {
+    align-items: flex-start;  
+    overflow: auto;
+  }
+
+  #cards {    
+    max-width: 1000px;
+    padding: 10px 0px;
+  }
+
+  .card {
+    flex-shrink: 1;
+    width: calc(50% - 20px);
+  }
+
+  .text-over {
+    font-size: 50px;
+  }
+}
+
+@media(max-width: 800px) {
+  header a:visited,
+  header a:link {
+      font-size: 25px;
+  }
+  
+  #home {
+      padding-top: 0.5rem;
+  }
+
+  .text-over {
+      font-size: 40px;
+  }
+
+  h1 {
+      font-size: 30px;
+      margin: 16px auto;
+  }
+
+  .card {
+      height: 15rem;
+  }
+}
+
+@media(max-width: 550px) {
+  .card {
+      height: 16rem;
+  }
+}
+
+@media(max-width: 500px) {
+
+  header a:visited,
+  header a:link {
+      font-size: 20px;
+  }
+  
+  .text-over {
+      font-size: 20px;
+      font-weight: 600;
+  }
+
+  h1 {
+      font-size: 20px;
+  }
+
+.card {
+  width: 100%;
+  height: 12rem;
+  margin: 0.5rem;
+}
+}
+
+@media(max-width: 430px) {
+  .card {
+      height: 13rem;
+  } 
+}
+
+@media(max-width: 350px) {
+
+#home {
+  display: none;
+}
+
+.card {
+  height: 15rem;
+}
+}
