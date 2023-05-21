@@ -27,6 +27,7 @@ if(isset($_POST['title']) && isset($_POST['first_name']) && isset($_POST['last_n
                     if ($role == "admin"){
                         echo "<a href='new-account.php'><button class='select-button'>Create New Account</button></a>";
                         echo "<a href='isnt-working.php'><button class='select-button'>Is Not Working</button></a>";
+                        echo "<a href='new-account.php'><button class='select-button'>Add new trip</button></a>";
                     } elseif ($role == "manager"){
                         echo "<a href='lost-password.php'><button class='select-button'>Lost Password</button></a>";
                         echo "<a href='isnt-working.php'><button class='select-button'>Is Not Working</button></a>";    

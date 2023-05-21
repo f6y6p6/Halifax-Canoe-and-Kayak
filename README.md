@@ -1,2 +1,4 @@
-# WD-assignment-2
-Skills for Hire Atlantic Web Development assignment #2
+# Web Development Assignment
+
+
+## Technical assignment for **Web Development** educational program of *Skills for Hire* and *Digital Nova Scotia*
