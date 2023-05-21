@@ -3,14 +3,7 @@
 include('header.php');
 
 //checking if form values are set
-if(isset($_POST['title']) && isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['role'])) {
-	$_SESSION['user'] = array(
-		'title' => $_POST['title'],
-		'first_name' => $_POST['first_name'],
-		'last_name' => $_POST['last_name'],
-		'role' => $_POST['role']
-	);
-}
+userCheck();
 ?>
 
 <!-- main content -->
@@ -27,7 +20,7 @@ if(isset($_POST['title']) && isset($_POST['first_name']) && isset($_POST['last_n
                     if ($role == "admin"){
                         echo "<a href='new-account.php'><button class='select-button'>Create New Account</button></a>";
                         echo "<a href='isnt-working.php'><button class='select-button'>Is Not Working</button></a>";
-                        echo "<a href='new-account.php'><button class='select-button'>Add new trip</button></a>";
+                        echo "<a href='admin-add.php'><button class='select-button'>Add new trip</button></a>";
                     } elseif ($role == "manager"){
                         echo "<a href='lost-password.php'><button class='select-button'>Lost Password</button></a>";
                         echo "<a href='isnt-working.php'><button class='select-button'>Is Not Working</button></a>";    

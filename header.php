@@ -1,5 +1,15 @@
 <?php 
 session_start();
+
+function userCheck() {
+if(isset($_POST['title']) && isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['role'])) {
+	$_SESSION['user'] = array(
+		'title' => $_POST['title'],
+		'first_name' => $_POST['first_name'],
+		'last_name' => $_POST['last_name'],
+		'role' => $_POST['role']
+	);
+}}
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +27,8 @@ session_start();
         <div class="menu">
             <nav>
                 <ul>
-                    <li><a href="homepage.php">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="all-adventures.php">Home</a></li>
+                    <li><a href="index.php">Sign in</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
@@ -26,7 +36,7 @@ session_start();
         </div>
         <div class="assets">
             <img src="images/hamburger.png" id="menu-btn" alt="menu icon">
-            <a href="homepage.php" id="home">Halifax Canoe and Kayak</a>
+            <a href="all-adventures.php" id="home">Halifax Canoe and Kayak</a>
             <img src="images/paddle-white.png" id="paddle-logo" alt="paddle logo">
         </div>
     </header>
