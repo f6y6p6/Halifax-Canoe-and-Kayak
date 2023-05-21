@@ -277,6 +277,7 @@ footer a:link {
   }
 
   .card {
+    height: 15rem;
     flex-shrink: 1;
     width: calc(50% - 20px);
   }
@@ -306,13 +307,13 @@ footer a:link {
   }
 
   .card {
-      height: 15rem;
+      height: 17rem;
   }
 }
 
 @media(max-width: 550px) {
   .card {
-      height: 16rem;
+      height: 18rem;
   }
 }
 
@@ -334,14 +335,14 @@ footer a:link {
 
 .card {
   width: 100%;
-  height: 12rem;
+  height: 14rem;
   margin: 0.5rem;
 }
 }
 
 @media(max-width: 430px) {
   .card {
-      height: 13rem;
+      height: 15rem;
   } 
 }
 
@@ -352,6 +353,6 @@ footer a:link {
 }
 
 .card {
-  height: 15rem;
+  height: 17rem;
 }
 }
